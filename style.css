@@ -1,0 +1,199 @@
+:root {
+  --accent: #4caf50;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: white;
+  background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.header {
+  text-align: center;
+}
+
+#greeting {
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.input-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: auto;
+}
+
+#taskList li {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--accent);
+}
+
+.stats, .calendar-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.day {
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  background: #ccc;
+  text-align: center;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.day.done {
+  background: var(--accent);
+  color: white;
+}
+
+.quote-box {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 4px solid var(--accent);
+  font-style: italic;
+  border-radius: 4px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge-box {
+  margin-top: 15px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: var(--accent);
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.badge-visible {
+  opacity: 1;
+}
+
+.progress-container {
+  width: 80%;
+  background-color: #ccc;
+  border-radius: 20px;
+  margin: 15px auto;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent);
+  transition: width 0.4s ease;
+}
+
+/* Animation for calendar days */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#calendar .day {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#calendar .day:hover {
+  background-color: #ffffff;
+  color: #222;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+#calendar .day.done {
+  animation: bounceIn 0.5s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.daily-quote {
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 15px;
+  border-left: 4px solid var(--accent);
+  border-radius: 5px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #f1f1f1;
+}
