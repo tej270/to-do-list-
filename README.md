@@ -23,4 +23,5 @@ A clean, personalized and interactive To-Do List web app designed to boost produ
 - **CSS** (with animations & responsive layout)
 - **Vanilla JavaScript**
 
+Live Demo:https://everydaytodol.netlify.app/
 
